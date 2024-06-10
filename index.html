@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digit Detective</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <script src="scripts.js"></script>
+</head>
+
+<body class="font-sans">
+    <header class="bg-gray-200 text-center py-6">
+        <h1 class="text-xl uppercase tracking-wider mb-2">Digit Detective</h1>
+        <h2 class="text-lg mb-4">Find the missing digit "x".</h2>
+    </header>
+
+    <main class="w-4/5 mx-auto py-12">
+        <div class="flex justify-between flex-wrap">
+            <section id="sin" class="w-full md:w-1/3 p-6 border border-black rounded-lg mb-6 md:mb-0">
+                <h2 class="mb-4">SIN Number</h2>
+                <form>
+                    <input type="text" maxlength="9" onkeydown="validateInput(this,event)" placeholder="9 digit number" class="w-full mb-4 p-3 text-base border rounded">
+                    <button onclick="findSIN(event)" class="bg-green-400 text-black px-4 py-2 text-lg font-medium rounded hover:bg-black hover:text-white float-right">Find the "x"</button>
+                </form>
+                <strong id="sin-result"></strong>
+            </section>
+
+            <section id="upc" class="w-full md:w-1/3 p-6 border border-black rounded-lg mb-6 md:mb-0">
+                <h2 class="mb-4">UPC Number</h2>
+                <form>
+                    <input type="text" maxlength="12" onkeydown="validateInput(this,event)" placeholder="12 digit number" class="w-full mb-4 p-3 text-base border rounded">
+                    <button onclick="findUPC(event)" class="bg-green-400 text-black px-4 py-2 text-lg font-medium rounded hover:bg-black hover:text-white float-right">Find the "x"</button>
+                </form>
+                <strong id="upc-result"></strong>
+            </section>
+
+            <section id="isbn" class="w-full md:w-1/3 p-6 border border-black rounded-lg">
+                <h2 class="mb-4">ISBN Number</h2>
+                <form>
+                    <input type="text" maxlength="10" onkeydown="validateISBNInput(this,event)" placeholder="10 digit number" class="w-full mb-4 p-3 text-base border rounded">
+                    <button onclick="findISBN(event)" class="bg-green-400 text-black px-4 py-2 text-lg font-medium rounded hover:bg-black hover:text-white float-right">Find the "x"</button>
+                </form>
+                <strong id="isbn-result"></strong>
+            </section>
+        </div>
+    </main>
+
+    <footer class="py-4 text-center border-t border-black">
+        <span>© 2023 Digit Detective</span>
+    </footer>
+</body>
+
+</html>
